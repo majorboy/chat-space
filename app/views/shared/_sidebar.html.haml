@@ -1,0 +1,27 @@
+.sidebar
+  .header
+    %h3.header__name
+      ユーザーA 
+    %ul.header__lists
+      %li.list
+        = link_to '#' do
+          = fa_icon 'pencil-square', class: 'icon'
+      %li.list  
+        = link_to '#' do
+          = fa_icon 'cog', class: 'icon'
+  .groups
+    .group
+      .group__name
+        チャットグループ１
+      .group__message
+        メッセージが入ります
+    .group
+      .group__name
+        チャットグループ２
+      .group__message
+        メッセージが入ります
+    .group
+      .group__name
+        チャットグループ３
+      .group__message
+        メッセージが入ります
