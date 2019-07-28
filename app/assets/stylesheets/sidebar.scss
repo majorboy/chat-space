@@ -1,9 +1,9 @@
 .sidebar {
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: $white;
   width: 300px;
   .header {
-    background-color: #253141;
+    background-color: $sidebar_dark_blue;
     height: 100px; 
     line-height: 100px;
     padding: 0 20px;
@@ -26,7 +26,7 @@
   }
 
   .groups {
-    background-color: #2f3e51;
+    background-color: $sidebar_light_blue;
     height: calc(100vh - 100px);
     padding: 0 20px;
     .group {
