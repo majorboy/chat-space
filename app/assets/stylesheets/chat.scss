@@ -59,4 +59,42 @@
       }
     }
   }
+
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      box-sizing: border-box;
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+      padding-left: 10px;
+    }
+    &__mask {
+      background-color: #FFF;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: #38AEF0;
+      border: none;
+      color: #FFF;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
+  }
 }
