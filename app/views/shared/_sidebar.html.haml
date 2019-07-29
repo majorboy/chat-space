@@ -11,17 +11,9 @@
           = fa_icon 'cog', class: 'icon'
   .groups
     .group
-      .group__name
-        チャットグループ１
-      .group__message
-        メッセージが入ります
-    .group
-      .group__name
-        チャットグループ２
-      .group__message
-        メッセージが入ります
-    .group
-      .group__name
-        チャットグループ３
-      .group__message
-        メッセージが入ります
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
