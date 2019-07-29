@@ -1,7 +1,7 @@
 .sidebar
   .header
     %h3.header__name
-      ユーザーA 
+      = current_user.name
     %ul.header__lists
       %li.list
         = link_to '#' do
