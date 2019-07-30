@@ -4,39 +4,24 @@
     .header
       .left-header
         .left-header__title
-          グループ名
+          = @group.name
         %ul.left-header__members
           Member:
           %li.member
-            メンバーA 
-          %li.member 
-            メンバーB 
+            - @group.users.each do |user|
+              = user.name
       .right-header
         .right-header__button
           Edit
 
     .messages
-      .message
-        .message-info
-          .message-info__user-name
-            ユーザー１
-          .message-info__date
-            2019/07/29
-        .message-body
-          ここにメッセージが入ります。ここにメッセージが入ります。 
-      .message
-        .message-info
-          .message-info__user-name
-            ユーザー２
-          .message-info__date
-            2019/07/29
-        .message-body
-          ここにメッセージが入ります。ここにメッセージが入ります。
+      = render @messages
+   
     .form
-      %form 
-        %input.form__message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder:'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class:'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-        %input.form__submit{ type: 'submit', value: 'Send'}
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
