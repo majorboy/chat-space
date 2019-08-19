@@ -17,13 +17,6 @@ $(function(){
                 </div>`
     return html;
   }
-  function scrollBottom(){
-    var target = $('.message').last();
-    var position = target.offset().top + $('.messages').scrollTop();
-    $('.messages').animate({
-      scrollTop: position
-    }, 300, 'swing');
-  }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this); 
