@@ -17,6 +17,13 @@ $(function(){
                 </div>`
     return html;
   }
+  function scrollBottom(){
+    var target = $('.message').last();
+    var position = target.offset().top + $('.messages').scrollTop();
+    $('.messages').animate({
+      scrollTop: position
+    }, 300, 'swing');
+  }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this); 
@@ -32,13 +39,13 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      
+      $( ".form__submit").prop( "disabled", false );
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('.form__message').val('');
+      $('.hidden').val('');
     })
     .fail(function(){
       alert('メッセージ送信に失敗しました。')
-    })
-    .always(function(){
-      $('.form__submit').prop('disabled',false);
     })
   })
 });
