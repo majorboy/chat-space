@@ -30,18 +30,21 @@ $(function(){
       dataType: 'json'
     })
 
-    .done(function(users){
-      if(users.length !== 0){
-        $(".user-search-result").empty();
-        users.forEach(function(user){
-          appendUser(user)
-        });
-      } else {
-        $(".user-search-result").empty();
-        noSearchResult("一致するユーザーが見つかりません");
+    .done(function(users){ 
+      var preUsers;
+      if (users != preUsers) {
+        if(users.length !== 0 ){
+          $(".user-search-result").empty();
+          users.forEach(function(user){
+            appendUser(user)
+          });
+        } else {
+          $(".user-search-result").empty();
+          noSearchResult("一致するユーザーが見つかりません");
+        }
+        preUsers = user
       }
     })
-
     .fail(function(){
       alert('ユーザー検索に失敗しました');
     });
