@@ -32,7 +32,7 @@ $(function(){
 
     .done(function(users){ 
       var preUsers;
-      if (users != preUsers) {
+      if (users != preUsers && input.length !== 0) {
         if(users.length !== 0 ){
           $(".user-search-result").empty();
           users.forEach(function(user){
