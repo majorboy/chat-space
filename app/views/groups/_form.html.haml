@@ -21,9 +21,10 @@
     .chat-group-form__field--left
       %label.chat-group-form__label チャットメンバー
     .chat-group-form__field--right
-      .chat-group-user 
-        = current_user.name
-      #member-list
+      .chat-group-users
+        .chat-group-user 
+          = current_user.name
+      
       
       
 
