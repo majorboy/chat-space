@@ -58,17 +58,16 @@ $(function(){
     .fail(function(){
       alert('ユーザー検索に失敗しました');
     });
-
-    $(function(){
-      $(document).on('click','.user-search-add',function(){
-        var name = $(this).attr("data-user-name");
-        var user_id = $(this).attr("data-user-id");
-        $(this).parent().remove();
-        appendUserToMemberList(name, user_id);
-      });
-      $(document).on("click",'.user-search-remove', function(){
-        $(this).parent().remove();
-      });
+  });
+  $(function(){
+    $(document).on('click','.user-search-add',function(){
+      var name = $(this).attr("data-user-name");
+      var user_id = $(this).attr("data-user-id");
+      $(this).parent().remove();
+      appendUserToMemberList(name, user_id);
+    });
+    $(document).on("click",'.user-search-remove', function(){
+      $(this).parent().remove();
     });
   });
 });
