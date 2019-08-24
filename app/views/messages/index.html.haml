@@ -12,7 +12,8 @@
               = user.name
       .right-header
         .right-header__button
-          Edit
+          = link_to edit_group_path(@group.id),data: {"turbolinks" =>false} do
+            Edit
 
     .messages
       = render @messages

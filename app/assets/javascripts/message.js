@@ -17,27 +17,29 @@ $(function(){
                 </div>`
     return html;
   }
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var message = new FormData(this); 
-    var url = window.location.href
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: message,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-      $( ".form__submit").prop( "disabled", false );
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $('#new_message')[0].reset();
-    })
-    .fail(function(){
-      alert('メッセージ送信に失敗しました。')
-    })
-  })
+  $(document).on('turbolinks:load', function() {
+    $('#new_message').on('submit', function(e){
+      e.preventDefault();
+      var message = new FormData(this); 
+      var url = window.location.href
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: message,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data){
+        var html = buildHTML(data);
+        $('.messages').append(html);
+        $( ".form__submit").prop( "disabled", false );
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        $('#new_message')[0].reset();
+      })
+      .fail(function(){
+        alert('メッセージ送信に失敗しました。')
+      })
+    });
+  });
 });
