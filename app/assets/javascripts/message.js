@@ -42,9 +42,8 @@ $(function(){
       })
     });
   
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
-        var reloadMessages = function(){
-        
+    var reloadMessages = function(){
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var last_message_id = $('.message:last').data('message-id');
         $.ajax({
           url: 'api/messages',
@@ -65,8 +64,8 @@ $(function(){
         .fail(function(){
           alert('メッセージの更新に失敗しました');
         }); 
-      };
-      setInterval(reloadMessages,5000);
-    }
+      }
+    };
+    setInterval(reloadMessages,5000);   
   });
 });
