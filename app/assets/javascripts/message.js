@@ -41,5 +41,28 @@ $(function(){
         alert('メッセージ送信に失敗しました。')
       })
     });
+
+    var reloadMessages = function(){
+      var last_message_id = $('.message').last().data("message-id");
+
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {last_id: last_message_id};
+      })
+
+      .done(function(messages){
+        var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildHTML(message);
+          $('.messages').append(insertHTML);
+        })
+      })
+
+      .fail(function(){
+        alert('メッセージの更新に失敗しました');
+      })
+    }
   });
 });
