@@ -11,9 +11,9 @@ $(function(){
                     ${ message.date }
                   </p>
                   <p class="message-body">
-                    ${ content } </br>
-                    ${ img }
+                    ${ content } 
                   </p>
+                    ${ img }
                 </div>`
     return html;
   }
