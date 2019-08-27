@@ -13,7 +13,7 @@ $(function(){
                   <p class="message-body">
                     ${ content }
                   </p>
-                  <p "message-body">
+                  <p class="message-body">
                     ${ img }
                   </p>
                 </div>`
