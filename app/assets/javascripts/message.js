@@ -12,8 +12,8 @@ $(function(){
                   </p>
                   <p class="message-body">
                     ${ content } 
-                  </p>
                     ${ img }
+                  </p> 
                 </div>`
     return html;
   }
