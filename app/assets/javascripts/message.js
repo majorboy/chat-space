@@ -12,7 +12,9 @@ $(function(){
                   </p>
                   <p class="message-body">
                     ${ content }
-                    <p>${ img }</p>
+                  </p>
+                  <p "message-body">
+                    ${ img }
                   </p>
                 </div>`
     return html;
