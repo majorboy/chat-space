@@ -2,19 +2,19 @@ $(function(){
   function buildHTML(message) {
     var content = message.content? `${ message.content }` : "";
     var img = message.image? `<img src= ${message.image}>`: "";
-    var html = `<div class="message" data-message-id="${ message.id }"
-                <div class="message-info">
-                  <p class="message-info__user-name">
-                    ${ message.user_name }
-                  </p>
-                  <p class="message-info__date">
-                    ${ message.date }
-                  </p>
-                  <p class="message-body">
+    var html = `<div class="message" data-message-id="${ message.id }">
+                  <div class="message-info">
+                    <div class="message-info__user-name">
+                      ${ message.user_name }
+                    </div>
+                    <div class="message-info__date">
+                      ${ message.date }
+                    </div>
+                  </div>
+                  <div class="message-body">
                     ${ content } </br>
                     ${ img }  
-                  </p> 
-                                 
+                  </div>                                 
                 </div>`
     return html;
   }
