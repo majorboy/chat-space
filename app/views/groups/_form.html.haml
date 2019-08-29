@@ -26,7 +26,7 @@
           .chat-group-user 
             = user.name
             %input{name: 'group[user_ids][]', type: 'hidden', value: "#{ user.id }"}
-            - unless current_user
+            - unless user.id == current_user.id
               .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除 
               
 
