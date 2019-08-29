@@ -15,7 +15,8 @@ $(function(){
                     ${ content } </br>
                     ${ img }  
                   </div>                                 
-                </div>`
+                </div>
+                `
     return html;
   }
   $(document).on('turbolinks:load', function() {
